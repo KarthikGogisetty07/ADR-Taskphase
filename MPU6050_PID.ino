@@ -85,8 +85,8 @@ void loop() {
    GyroAngle[1] = GyrY/131.0;
    
    //Total Inclination:
-   TotalAngle[0] = 0.96*(TotalAngle[0] + GyroAngle[0])+0.04*(AccAngle[0]);
-   TotalAngle[1] = 0.96*(TotalAngle[1] + GyroAngle[1])+0.04*(AccAngle[1]);
+   TotalAngle[0] = 0.96*(TotalAngle[0] + GyroAngle[0]*elapsedTime)+0.04*(AccAngle[0]);
+   TotalAngle[1] = 0.96*(TotalAngle[1] + GyroAngle[1]*elapsedTime)+0.04*(AccAngle[1]);
 
    //To print values obtained:
    //Serial.println(TotalAngle[1]) //As we need only one axis stablity
